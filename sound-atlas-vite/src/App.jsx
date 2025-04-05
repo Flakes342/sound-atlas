@@ -5,8 +5,28 @@ function App() {
   const globeRef = useRef();
 
   useEffect(() => {
-    // Set initial camera position
-    globeRef.current.pointOfView({ lat: 20, lng: 0, altitude: 2 }, 1000);
+    const globe = globeRef.current;
+
+    globe.pointOfView({ lat: 20, lng: 0, altitude: 2 }, 1000);
+
+    // Enable auto-rotation
+    globe.controls().autoRotate = true;
+    globe.controls().autoRotateSpeed = 1.0;
+
+    // Add light
+    const directionalLight = globe.scene().children.find(
+      obj => obj.type === "DirectionalLight"
+    );
+    if (directionalLight) {
+      directionalLight.intensity = 1.2;
+    }
+
+    const ambientLight = globe.scene().children.find(
+      obj => obj.type === "AmbientLight"
+    );
+    if (ambientLight) {
+      ambientLight.intensity = 1.5;
+    }
   }, []);
 
   return (
