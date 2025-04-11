@@ -23,18 +23,21 @@ body, html, #root {
   max-width: 300px;
   width: 20vw; /* responsive to screen size */
   background-color: #1c1c1c;
-  padding: 20px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
   border-right: 1px solid #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .app-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .logo-image {
@@ -75,16 +78,23 @@ body, html, #root {
   padding: 8px 16px;
   white-space: nowrap;
   width: 100%;
+  color: white;
 }
 
 .spotify-icon {
   width: 40px;
   height: 40px;
 }
+
 .globe-container {
-  flex-grow: 2;
-  position: center;
+  flex: 1;
   background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transform: translateX(-40px);
 }
 
 .floating-panel {

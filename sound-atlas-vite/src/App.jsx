@@ -16,10 +16,11 @@ function App() {
     // 🔧 Fix clipping by adjusting camera planes
     globe.camera().near = 0.1;
     globe.camera().far = 2000;
-    globe.camera().updateProjectionMatrix(); // 🚨 important!
+    globe.camera().updateProjectionMatrix();
   
     globe.controls().autoRotate = false;
-    globe.pointOfView({ lat: 20, lng: 0, altitude: 2 }, 1000);
+    globeRef.current.pointOfView({ lat: 20, lng: -60, altitude: 2 }, 1000);
+
   
     let animationId;
     const animate = () => {
